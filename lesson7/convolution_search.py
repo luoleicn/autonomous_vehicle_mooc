@@ -27,6 +27,13 @@ def find_window_centroids(image, window_width, window_height, margin):
     # Sum quarter bottom of image to get slice, could use a different ratio
     l_sum = np.sum(image[int(3*image.shape[0]/4):,:int(image.shape[1]/2)], axis=0)
     l_center = np.argmax(np.convolve(window,l_sum))-window_width/2
+    #for debug
+    np.set_printoptions(threshold='nan')
+    print l_sum
+    print "---"
+    print np.convolve(window,l_sum)
+    print "===", len(window), len(l_sum)
+    
     r_sum = np.sum(image[int(3*image.shape[0]/4):,int(image.shape[1]/2):], axis=0)
     r_center = np.argmax(np.convolve(window,r_sum))-window_width/2+int(image.shape[1]/2)
     

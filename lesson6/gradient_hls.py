@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
 
-image = mpimg.imread('bridge_shadow.jpg')
+#image = mpimg.imread('bridge_shadow.jpg')
+image = mpimg.imread('test2.jpg')
 
 # Edit this function to create your own pipeline.
 def pipeline(img, s_thresh=(170, 255), sx_thresh=(20, 100)):
@@ -41,3 +42,5 @@ ax1.set_title('Original Image', fontsize=40)
 ax2.imshow(result)
 ax2.set_title('Pipeline Result', fontsize=40)
 plt.subplots_adjust(left=0., right=1, top=0.9, bottom=0.)
+
+plt.show()

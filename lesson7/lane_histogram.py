@@ -29,9 +29,12 @@ def find_lane_pixels(binary_warped):
     window_height = np.int(binary_warped.shape[0]//nwindows)
     # Identify the x and y positions of all nonzero pixels in the image
     nonzero = binary_warped.nonzero()
+    print "==="
     print nonzero
+    print "==="
     nonzeroy = np.array(nonzero[0])
     nonzerox = np.array(nonzero[1])
+    print len(nonzero), len(nonzeroy), len(nonzerox), binary_warped.shape
     # Current positions to be updated later for each window in nwindows
     leftx_current = leftx_base
     rightx_current = rightx_base

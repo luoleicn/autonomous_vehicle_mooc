@@ -40,10 +40,10 @@ def search_around_poly(binary_warped):
     ### in the previous quiz, but change the windows to our new search area ###
     left_lane_inds = ((nonzerox > (left_fit[0]*(nonzeroy**2) + left_fit[1]*nonzeroy +
                     left_fit[2] - margin)) & (nonzerox < (left_fit[0]*(nonzeroy**2) +
-                    left_fit[1]*nonzeroy + left_fit[2] + margin)))
+                    left_fit[1]*nonzeroy + left_fit[2] + margin))).nonzero()[0]
     right_lane_inds = ((nonzerox > (right_fit[0]*(nonzeroy**2) + right_fit[1]*nonzeroy +
                     right_fit[2] - margin)) & (nonzerox < (right_fit[0]*(nonzeroy**2) +
-                    right_fit[1]*nonzeroy + right_fit[2] + margin)))
+                    right_fit[1]*nonzeroy + right_fit[2] + margin))).nonzero()[0]
     
     # Again, extract left and right line pixel positions
     leftx = nonzerox[left_lane_inds]
